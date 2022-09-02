@@ -1,6 +1,6 @@
 .navbar {
   display: flex;
-  box-shadow: rgba(1, 1, 1, .15) 0 -2px 10x 0;
+  box-shadow: rgba(0, 0, 0, .15) 0 -2px 10px 0;
   justify-content: space-between;
   align-items: center;
   padding: .5rem 2rem;
