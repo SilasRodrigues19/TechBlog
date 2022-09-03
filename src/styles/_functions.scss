@@ -1,0 +1,41 @@
+@mixin flexCenter($justify_content) {
+	display: flex;
+	align-items: center;
+	justify-content: $justify_content;
+}
+
+@mixin flexCenterCol {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+@mixin backgroundBefore($position, $opacity, $background) {
+	position: $position;
+	opacity: $opacity;
+	background: $background;
+	content: "";
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	left: 0;
+	top: 0;
+}
+
+@function pxToRem($value) {
+	@return ($value / 16) + rem;
+}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+}
