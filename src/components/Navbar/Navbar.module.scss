@@ -1,0 +1,29 @@
+@import '../../styles/variables';
+@import '../../styles/functions';
+
+.navbar {
+  @include flexCenter(space-between);
+  box-shadow: rgba(0, 0, 0, .15) 0 -2px 10px 0;
+  padding: .5rem 2rem;
+  .brand {
+    font-size: 1.2rem;
+    span {
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+  }
+  .links_list {
+    display: flex;
+    list-style: none;
+    li {
+      margin-right: 1rem;
+      a {
+        padding: .4rem .6rem;
+      }
+    }
+    .active {
+      background: #111;
+      color: #cacaca;
+    }
+  }
+}

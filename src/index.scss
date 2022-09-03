@@ -1,0 +1,36 @@
+@import './styles/variables';
+@import './styles/functions';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f6fcff;
+  font-family: $mainFont;
+  margin: 0;
+  padding: 0;
+}
+
+input, textarea {
+  &::placeholder {
+    font-family: $mainFont;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+a, nav button {
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  color: #111;
+  transition: .4s;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: $mainFont;
+  &:hover {
+    color: #bbb;
+  }
+}
