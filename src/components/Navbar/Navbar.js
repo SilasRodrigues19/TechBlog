@@ -5,8 +5,8 @@ import styles from './Navbar.module.scss';
 export const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-      <NavLink to='/'>
-        Mini <span>Blob</span>
+      <NavLink to='/' className={styles.brand}>
+        Mini <span>Blog</span>
       </NavLink>
       <ul className={styles.links_list}>
         <li>
