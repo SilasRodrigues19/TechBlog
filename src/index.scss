@@ -6,31 +6,107 @@
 }
 
 body {
-  background: #f6fcff;
+  background: #2c3a42;
   font-family: $mainFont;
   margin: 0;
   padding: 0;
 }
 
-input, textarea {
+input,
+textarea {
   &::placeholder {
     font-family: $mainFont;
+    color: #aaa;
   }
   &:focus {
     outline: none;
   }
 }
 
-a, nav button {
+a,
+nav button {
   text-decoration: none;
   background: transparent;
   border: none;
   color: #111;
-  transition: .4s;
+  transition: 0.4s;
   font-size: 1rem;
   cursor: pointer;
   font-family: $mainFont;
   &:hover {
     color: #bbb;
+  }
+}
+
+/* Form styles */
+form {
+  max-width: 40%;
+  margin: 0 auto;
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.3rem;
+    span {
+      margin-bottom: 0.3rem;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+  input,
+  textarea {
+    border: none;
+    border-bottom: 0.3rem solid #ccc;
+    padding: 0.8rem 0;
+    background: transparent;
+  }
+}
+
+.btn {
+  background: #1a8918;
+  color: #cacaca;
+  text-align: center;
+  cursor: pointer;
+  border-radius: pxToRem(10);
+  width: pxToRem(120);
+  font-weight: bold;
+  border: none;
+  padding: pxToRem(10) pxToRem(15);
+  font-size: 1rem;
+  &.btn-dark {
+    background: #111;
+    border-radius: 0;
+  }
+  &.btn-outline {
+    background: transparent;
+    border-radius: 0;
+    color: #111;
+    border: 1px solid #111;
+    padding: pxToRem(7) pxToRem(30);
+    &:hover {
+      background: #111;
+    }
+  }
+  &.btn-danger {
+    &:hover {
+      background: #dc3545;
+    }
+  }
+  &:hover {
+    background: #0f730c;
+    color: #cacaca;
+  }
+}
+
+button[disabled] {
+  background: #aaa;
+}
+
+.container {
+  .error {
+    color: #721c24;
+    background: #f8d7da;
+    border: 0.3rem solid #f5c6cb;
+    padding: pxToRem(5);
+    border-radius: pxToRem(5);
   }
 }
