@@ -1,4 +1,4 @@
-import styles from './About.module.css';
+import styles from './About.module.scss';
 
 export const About = () => {
   return (
@@ -6,4 +6,4 @@ export const About = () => {
       <h1>About</h1>
     </>
   );
-}
+};
