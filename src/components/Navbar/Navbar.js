@@ -1,8 +1,14 @@
 import { NavLink } from 'react-router-dom';
 
+import { useAuth } from '../../hooks/useAuth';
+
+import { useAuthValue } from '../../context/AuthContext';
+
 import styles from './Navbar.module.scss';
 
 export const Navbar = () => {
+  const { user } = useAuthValue();
+
   return (
     <nav className={styles.navbar}>
       <NavLink to='/' className={styles.brand}>
@@ -17,22 +23,49 @@ export const Navbar = () => {
             Inicio
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to='/login'
-            className={({ isActive }) => (isActive ? styles.active : '')}
-          >
-            Entrar
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='/register'
-            className={({ isActive }) => (isActive ? styles.active : '')}
-          >
-            Cadastrar
-          </NavLink>
-        </li>
+
+        {!user && (
+          <>
+            <li>
+              <NavLink
+                to='/login'
+                className={({ isActive }) => (isActive ? styles.active : '')}
+              >
+                Entrar
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to='/register'
+                className={({ isActive }) => (isActive ? styles.active : '')}
+              >
+                Cadastrar
+              </NavLink>
+            </li>
+          </>
+        )}
+
+        {user && (
+          <>
+            <li>
+              <NavLink
+                to='/dashboard'
+                className={({ isActive }) => (isActive ? styles.active : '')}
+              >
+                Painel
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to='/post/create'
+                className={({ isActive }) => (isActive ? styles.active : '')}
+              >
+                Criar post
+              </NavLink>
+            </li>
+          </>
+        )}
+
         <li>
           <NavLink
             to='/about'
