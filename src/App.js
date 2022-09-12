@@ -8,7 +8,7 @@ import { AuthProvider } from './context/AuthContext';
 import { useState, useEffect } from 'react';
 import { useAuth } from './hooks/useAuth';
 
-import { Home, About, Login, Register } from './pages';
+import { Home, About, Login, Register, Dashboard, CreatePost } from './pages';
 import { Navbar, Footer } from './components';
 
 export const App = () => {
@@ -32,10 +32,25 @@ export const App = () => {
           <Navbar />
           <div className='container'>
             <Routes>
-              <Route path='/' element={<Home />} />
+              <Route exact path='/' element={<Home />} />
               <Route path='/about' element={<About />} />
-              <Route path='/login' element={<Login />} />
-              <Route path='/register' element={<Register />} />
+              <Route
+                path='/login'
+                element={!user ? <Login /> : <Navigate to='/' />}
+              />
+              <Route
+                path='/register'
+                element={!user ? <Register /> : <Navigate to='/' />}
+              />
+              <Route
+                path='/dashboard'
+                element={user ? <Dashboard /> : <Navigate to='/' />}
+              />
+              <Route
+                path='/post/create'
+                element={user ? <CreatePost /> : <Navigate to='/' />}
+              />
+              <Route path='*' element={<h1>404 (Ainda não implementada)</h1>} />
             </Routes>
           </div>
           <Footer />
