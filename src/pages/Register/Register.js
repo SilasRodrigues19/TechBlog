@@ -3,6 +3,8 @@ import styles from './Register.module.scss';
 import { useState, useEffect } from 'react';
 import { useAuth } from '../../hooks/useAuth';
 
+import { Icon } from '@iconify/react';
+
 export const Register = () => {
   const [displayName, setDisplayName] = useState('');
   const [email, setEmail] = useState('');
@@ -93,7 +95,12 @@ export const Register = () => {
           <button className='btn'>Cadastrar</button>
         )}
 
-        {error && <p className='error'>{error}</p>}
+        {error && (
+          <p className='error'>
+            <Icon className='dangerIcon' icon='jam:triangle-danger-f' />
+            {error}
+          </p>
+        )}
       </form>
     </>
   );
