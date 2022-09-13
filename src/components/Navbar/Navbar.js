@@ -8,6 +8,7 @@ import styles from './Navbar.module.scss';
 
 export const Navbar = () => {
   const { user } = useAuthValue();
+  const { logout } = useAuth();
 
   return (
     <nav className={styles.navbar}>
@@ -37,7 +38,7 @@ export const Navbar = () => {
             <li>
               <NavLink
                 to='/register'
-                className={({ isActive }) => (isActive ? styles.active : '')}
+                className={({ isActive }) => (isActive ? '' : styles.signup)}
               >
                 Cadastrar
               </NavLink>
@@ -74,6 +75,11 @@ export const Navbar = () => {
             Sobre
           </NavLink>
         </li>
+        {user && (
+          <li>
+            <button onClick={logout}>Sair</button>
+          </li>
+        )}
       </ul>
     </nav>
   );

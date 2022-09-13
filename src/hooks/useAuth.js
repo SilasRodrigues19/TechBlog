@@ -61,6 +61,12 @@ export const useAuth = () => {
     setIsLoading(false);
   };
 
+  const logout = () => {
+    isCancelled();
+
+    signOut(auth);
+  };
+
   useEffect(() => {
     return () => isCancelled(true);
   }, []);
@@ -70,5 +76,6 @@ export const useAuth = () => {
     createUser,
     error,
     isLoading,
+    logout,
   };
 };
