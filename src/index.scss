@@ -28,13 +28,14 @@ nav button {
   text-decoration: none;
   background: transparent;
   border: none;
-  color: #111;
+  color: #888;
   transition: 0.4s;
   font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
   font-family: $mainFont;
   &:hover {
-    color: #bbb;
+    color: #111;
   }
 }
 
@@ -64,7 +65,7 @@ form {
 
 .btn {
   background: #1a8918;
-  color: #cacaca;
+  color: #f1fbfb;
   text-align: center;
   cursor: pointer;
   border-radius: pxToRem(10);
@@ -96,7 +97,7 @@ form {
   }
   &:hover {
     background: #0f730c;
-    color: #cacaca;
+    color: #f1fbfb;
   }
 }
 

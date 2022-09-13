@@ -3,8 +3,8 @@
 
 .navbar {
   @include flexCenter(space-between);
-  box-shadow: rgba(0, 0, 0, .15) 0 -2px 10px 0;
-  padding: .5rem 2rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 -2px 10px 0;
+  padding: 0.5rem 2rem;
   .brand {
     font-size: 1.2rem;
     span {
@@ -18,12 +18,21 @@
     li {
       margin-right: 1rem;
       a {
-        padding: .4rem .6rem;
+        padding: 0.4rem 1rem;
       }
     }
     .active {
+      color: #111;
+    }
+    .signup {
+      color: #f1fbfb;
       background: #111;
-      color: #cacaca;
+      border: 1px solid #111;
+      border-radius: 0.3rem;
+      &:hover {
+        color: #111;
+        background: transparent;
+      }
     }
   }
 }
