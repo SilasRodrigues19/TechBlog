@@ -38,7 +38,9 @@ export const Navbar = () => {
             <li>
               <NavLink
                 to='/register'
-                className={({ isActive }) => (isActive ? '' : styles.signup)}
+                className={({ isActive }) =>
+                  isActive ? styles.active : styles.signup
+                }
               >
                 Cadastrar
               </NavLink>
