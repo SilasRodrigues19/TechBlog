@@ -96,10 +96,12 @@ export const Register = () => {
         )}
 
         {error && (
-          <p className='error'>
-            <Icon className='dangerIcon' icon='jam:triangle-danger-f' />
-            {error}
-          </p>
+          <div className="error">
+            <p>
+              <Icon className='dangerIcon' icon='jam:triangle-danger-f' />
+              {error}
+            </p>
+          </div>
         )}
       </form>
     </>
