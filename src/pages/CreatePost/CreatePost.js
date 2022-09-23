@@ -17,18 +17,36 @@ export const CreatePost = () => {
 
   const { user } = useAuthValue();
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormError('');
+
+    const tagsArray = tags.split(',').map((tag) => tag.trim().toLowerCase());
+
+    if (!title || !image || !tags || !body) {
+      setFormError('Por favor, preencha todos os campos');
+    }
+
+    try {
+      new URL(image);
+    } catch (error) {
+      setFormError('A imagem precisa ser uma URL');
+    }
+
+    if (formError) return;
 
     insertDocument({
       title,
       image,
       body,
-      tags,
+      tagsArray,
       uid: user.uid,
       createdBy: user.displayName,
     });
+
+    navigate('/');
   };
 
   return (
@@ -95,6 +113,14 @@ export const CreatePost = () => {
             <p>
               <Icon className="dangerIcon" icon="jam:triangle-danger-f" />
               {response.error}
+            </p>
+          </div>
+        )}
+        {formError && (
+          <div className="error">
+            <p>
+              <Icon className="dangerIcon" icon="jam:triangle-danger-f" />
+              {formError}
             </p>
           </div>
         )}
