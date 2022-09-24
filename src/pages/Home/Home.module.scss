@@ -1,0 +1,31 @@
+@import '../../styles/variables';
+@import '../../styles/functions';
+
+.home {
+  @include flexCenterCol;
+  .searchForm {
+    max-width: 100%;
+    width: 60%;
+    @include flexCenter(center);
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    input {
+      margin-right: .7rem;
+      width: 50%;
+    }
+    button {
+      margin: 0;
+    }
+  }
+}
+
+.hasNoPosts {
+  text-align: center;
+  p {
+    margin-bottom: 1rem;
+  }
+  a {
+    padding: .8rem 1.5rem;
+    width: 100%;
+  }
+}
