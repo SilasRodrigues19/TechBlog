@@ -34,7 +34,7 @@ export const Home = () => {
                 Não existe nada publicado.
               </p>
             </div>
-            <Link to='/posts/create' className='btn'>Criar novo post</Link>
+            <Link to='/post/create' className='btn'>Criar novo post</Link>
           </div>
         )}
       </div>
