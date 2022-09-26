@@ -1,0 +1,28 @@
+@import '../../styles/variables';
+@import '../../styles/functions';
+
+.postDetail {
+  margin-bottom: 1.5rem;
+  img {
+    max-width: pxToRem(600);
+  }
+  h2 {
+    margin-bottom: 0.2rem;
+  }
+  .tags {
+    margin-bottom: 0.8rem;
+    display: flex;
+    p {
+      margin-right: 0.2rem;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+.createdBy {
+  font: 0.4rem italic;
+  color: #444;
+  margin-bottom: 0.6rem;
+}
