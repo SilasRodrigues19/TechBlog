@@ -12,6 +12,11 @@
 	flex-wrap: wrap;
 }
 
+@mixin gridCol($columns) {
+	display: grid;
+	grid-template-columns: repeat($columns, 1fr);
+}
+
 @mixin backgroundBefore($position, $opacity, $background) {
 	position: $position;
 	opacity: $opacity;
