@@ -17,15 +17,19 @@
       margin: 0;
     }
   }
-}
-
-.hasNoPosts {
-  text-align: center;
-  p {
-    margin-bottom: 1rem;
-  }
-  a {
-    padding: .8rem 1.5rem;
-    width: 100%;
+  .postsWrapper {
+    @include gridCol(2);
+    gap: 2rem;
+    margin: 3rem 0;
+    .hasNoPosts {
+      text-align: center;
+      p {
+        margin-bottom: 1rem;
+      }
+      a {
+        padding: .8rem 1.5rem;
+        width: 100%;
+      }
+    }
   }
 }

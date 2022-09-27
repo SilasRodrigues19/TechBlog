@@ -25,7 +25,7 @@ export const Home = () => {
         />
         <button className="btn btn-dark">Pesquisar</button>
       </form>
-      <div>
+      <div className={styles.postsWrapper}>
         {loading && <p>Carregando...</p>}
         {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
         {posts && posts.length === 0 && (
