@@ -5,6 +5,10 @@
   margin-bottom: 1.5rem;
   img {
     max-width: pxToRem(600);
+    max-height: 15rem;
+    &:hover {
+      box-shadow: 1px 3px 15px #ccc;
+    }
   }
   h2 {
     margin-bottom: 0.2rem;
@@ -18,11 +22,15 @@
     span {
       font-weight: bold;
     }
+    .createdBy {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: #444;
+      margin-bottom: 0.6rem;
+    }
+  }
+  a {
+    margin: 0;
   }
 }
 
-.createdBy {
-  font: 0.4rem italic;
-  color: #444;
-  margin-bottom: 0.6rem;
-}
