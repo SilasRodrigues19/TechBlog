@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
 body {
   font-family: $mainFont;
   margin: 0;
