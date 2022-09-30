@@ -2,7 +2,7 @@
 @import '../../styles/functions';
 
 .about {
-  @include flexCenterCol;
+  @include flexSection;
   text-align: center;
   p {
     color: #aaa;
