@@ -3,11 +3,17 @@
 
 .postDetail {
   margin-bottom: 1.5rem;
-  img {
-    max-width: pxToRem(600);
-    max-height: 15rem;
+  .imgBox {
+    width: 100%;
+    @include flexCenter(center);
+    padding: 1rem;
+    box-shadow: 0 0 1px #ccc;
     &:hover {
       box-shadow: 1px 3px 15px #ccc;
+    }
+    img {
+      max-width: pxToRem(600);
+      max-height: 15rem;
     }
   }
   h2 {
@@ -33,4 +39,3 @@
     margin: 0;
   }
 }
-
