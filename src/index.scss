@@ -14,7 +14,11 @@ body {
 .container {
   min-height: 100vh;
   &::before {
-    @include backgroundBefore(fixed, .1, url('../src/images/background.webp') no-repeat center / cover);
+    @include backgroundBefore(
+      fixed,
+      0.1,
+      url('../src/images/background.webp') no-repeat center / cover
+    );
   }
 }
 
@@ -70,7 +74,7 @@ form {
 }
 
 .btn {
-  background: #1a8918;
+  background: #272343;
   color: #f1fbfb;
   text-align: center;
   cursor: pointer;
@@ -83,17 +87,17 @@ form {
   padding: pxToRem(10) pxToRem(15);
   font-size: 1rem;
   &.btn-dark {
-    background: #111;
+    background: #272343;
     border-radius: 0;
   }
   &.btn-outline {
     background: transparent;
     border-radius: 0;
-    color: #111;
-    border: 0.1rem solid #111;
+    color: #272343;
+    border: 0.1rem solid #272343;
     padding: pxToRem(7) pxToRem(30);
     &:hover {
-      background: #111;
+      background: #272343;
     }
   }
   &.btn-danger {
@@ -102,7 +106,7 @@ form {
     }
   }
   &:hover {
-    background: #0f730c;
+    background: rgba(39, 35, 67, 0.9);
     color: #f1fbfb;
   }
 }
@@ -126,5 +130,4 @@ button[disabled] {
       }
     }
   }
-
 }
