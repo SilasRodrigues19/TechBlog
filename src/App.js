@@ -8,6 +8,7 @@ import { useAuth } from './hooks/useAuth';
 
 import { Home, About, Login, Register, Dashboard, CreatePost } from './pages';
 import { Navbar, Footer, Loader } from './components';
+import { Search } from './pages/Search/Search';
 
 export const App = () => {
   const [user, setUser] = useState(undefined);
@@ -32,6 +33,7 @@ export const App = () => {
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/search" element={<Search />} />
               <Route
                 path="/login"
                 element={!user ? <Login /> : <Navigate to="/" />}
