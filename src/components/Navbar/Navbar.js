@@ -12,13 +12,13 @@ export const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <NavLink to='/' className={styles.brand}>
-        Mini <span>Blog</span>
+      <NavLink to="/" className={styles.brand}>
+        Tech <span>Blog</span>
       </NavLink>
       <ul className={styles.links_list}>
         <li>
           <NavLink
-            to='/'
+            to="/"
             className={({ isActive }) => (isActive ? styles.active : '')}
           >
             Inicio
@@ -29,7 +29,7 @@ export const Navbar = () => {
           <>
             <li>
               <NavLink
-                to='/login'
+                to="/login"
                 className={({ isActive }) => (isActive ? styles.active : '')}
               >
                 Entrar
@@ -37,7 +37,7 @@ export const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to='/register'
+                to="/register"
                 className={({ isActive }) =>
                   isActive ? styles.active : styles.signup
                 }
@@ -52,7 +52,7 @@ export const Navbar = () => {
           <>
             <li>
               <NavLink
-                to='/dashboard'
+                to="/dashboard"
                 className={({ isActive }) => (isActive ? styles.active : '')}
               >
                 Painel
@@ -60,7 +60,7 @@ export const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to='/post/create'
+                to="/post/create"
                 className={({ isActive }) => (isActive ? styles.active : '')}
               >
                 Criar post
@@ -71,7 +71,7 @@ export const Navbar = () => {
 
         <li>
           <NavLink
-            to='/about'
+            to="/about"
             className={({ isActive }) => (isActive ? styles.active : '')}
           >
             Sobre
