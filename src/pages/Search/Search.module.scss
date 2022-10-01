@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+@import '../../styles/functions';
+
+.searchContainer {
+  @include flexCenterCol;
+  h2 {
+    margin-bottom: 0.7rem;
+    color: #1c1c1c;
+  }
+  p {
+    margin-bottom: pxToRem(30);
+  }
+  .term {
+    font-weight: bold;
+    color: #272343;
+  }
+}
