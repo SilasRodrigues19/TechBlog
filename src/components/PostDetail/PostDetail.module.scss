@@ -7,7 +7,7 @@
     width: 100%;
     @include flexCenter(center);
     padding: 1rem;
-    box-shadow: 0 0 1px #ccc;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 -2px 25px 0;
     &:hover {
       box-shadow: 1px 3px 15px #ccc;
     }
