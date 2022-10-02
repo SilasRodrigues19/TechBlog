@@ -9,7 +9,7 @@ import styles from './Search.module.scss';
 
 export const Search = () => {
   const query = useQuery();
-  const search = query.get('q');
+  const search = query.get('q').toLowerCase();
 
   const { documents: posts } = useFetchDocuments('posts', search);
 
