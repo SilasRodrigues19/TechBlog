@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <h3>Escreva sobre o que você está interessado!</h3>
-      <p>Mini Blog &copy; 2022</p>
+      <p>Tech Blog &copy; 2022</p>
     </footer>
   );
 };
