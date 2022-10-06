@@ -1,70 +1,157 @@
-# Getting Started with Create React App
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
+<br />
+<samp>
+<p align="center">
+  <a href="https://miniblogreact.vercel.app/">
+    <img src="./public/logo.svg" alt="Logo" width="50">
+  </a>
 
-## Available Scripts
+  <h3 align="center">Tech Blog</h3>
 
-In the project directory, you can run:
+  <p align="center">
+    A simple blog to people share technology knowledge.
+    <br />
+    <a href="https://miniblogreact.vercel.app/"><strong>View Demo</strong></a>
+    <br />
+  </p>
+</p>
 
-### `npm start`
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- ABOUT THE PROJECT -->
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## About The Project
 
-### `npm test`
+<hr>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Home page
 
-### `npm run build`
+[![Preview][product-screenshot]](https://miniblogreact.vercel.app/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Filtered posts
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[![Preview][product-screenshot2]](https://miniblogreact.vercel.app/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Clicked post details
 
-### `npm run eject`
+[![Preview][product-screenshot3]](https://miniblogreact.vercel.app/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Sign up page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[![Preview][product-screenshot4]](https://miniblogreact.vercel.app/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Sign in page
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[![Preview][product-screenshot5]](https://miniblogreact.vercel.app/)
 
-## Learn More
+### About page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[![Preview][product-screenshot6]](https://miniblogreact.vercel.app/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Create post
 
-### Code Splitting
+[![Preview][product-screenshot7]](https://miniblogreact.vercel.app/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The screens and features are described below:
 
-### Analyzing the Bundle Size
+- **Home:** two grid columns to show all posts stored in the database.
+- **Filtered posts:** displays posts based on term entered in the search field.
+- **Clicked post details:** display post details after clicking "Leia" button.
+- **Sign up page:** user registration page (the email and password provided are used to auth to the Tech Blog).
+- **Sign in page:** user auth page (some pages are only accessed after auth step).
+- **About page:** simple page describing about the Tech Blog.
+- **Create post:** page to create posts, it is necessary to inform the title, image url, post content and tags separated by comma and then you can make a post (you must be authenticated to post).
+- **Dashboard:** not implemented yet.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Built With
 
-### Making a Progressive Web App
+Technologies used in the project.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Tools
 
-### Advanced Configuration
+- [SASS](https://sass-lang.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Services
 
-### Deployment
+- [Cloud Firestore](https://firebase.google.com/products/firestore)
+- [Firebase Authentication](https://firebase.google.com/products/auth)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Libraries
 
-### `npm run build` fails to minify
+- [ReactJS](https://reactjs.org/)
+- [Iconify Design](https://iconify.design/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Font Script
+
+- [Font Awesome](https://fontawesome.com)
+
+<!-- CONTRIBUTING -->
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<!-- CONTACT -->
+
+## Contact
+
+Silas Rodrigues - [@jinuye1](https://twitter.com/jinuye1) - silasrodrigues.fatec@gmail.com
+
+Project Link: [https://github.com/SilasRodrigues19/TechBlog](https://github.com/SilasRodrigues19/TechBlog) <br>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/SilasRodrigues19/TechBlog.svg?style=for-the-badge
+[contributors-url]: https://github.com/SilasRodrigues19/TechBlog/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/SilasRodrigues19/TechBlog.svg?style=for-the-badge
+[forks-url]: https://github.com/SilasRodrigues19/TechBlog/network/members
+[stars-shield]: https://img.shields.io/github/stars/SilasRodrigues19/TechBlog.svg?style=for-the-badge
+[stars-url]: https://github.com/SilasRodrigues19/TechBlog/stargazers
+[issues-shield]: https://img.shields.io/github/issues/SilasRodrigues19/TechBlog.svg?style=for-the-badge
+[issues-url]: https://github.com/SilasRodrigues19/TechBlog/issues
+[license-shield]: https://img.shields.io/github/license/SilasRodrigues19/TechBlog.svg?style=for-the-badge
+[license-url]: https://github.com/SilasRodrigues19/TechBlog/blob/master/LICENSE
+[product-screenshot]: ./public/preview.png
+[product-screenshot2]: ./public/preview2.png
+[product-screenshot3]: ./public/preview3.png
+[product-screenshot4]: ./public/preview4.png
+[product-screenshot5]: ./public/preview5.png
+[product-screenshot6]: ./public/preview6.png
+[product-screenshot7]: ./public/preview7.png
+[license-url]: https://github.com/SilasRodrigues19/TechBlog/blob/master/LICENSE
+
+<br><hr>
+[🔼 Back to top](#JSQuiz)
