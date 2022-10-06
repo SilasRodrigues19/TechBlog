@@ -154,4 +154,4 @@ Project Link: [https://github.com/SilasRodrigues19/TechBlog](https://github.com/
 [license-url]: https://github.com/SilasRodrigues19/TechBlog/blob/master/LICENSE
 
 <br><hr>
-[🔼 Back to top](#TechBlog)
+[🔼 Back to top](#Tech-Blog)
