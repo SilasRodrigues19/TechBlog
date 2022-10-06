@@ -52,7 +52,7 @@ export const CreatePost = () => {
   return (
     <div className={styles.createPost}>
       <h2>Criar post</h2>
-      <p>Escreva sobre o que quiser e compartilhe seu cnhecimento</p>
+      <p>Escreva sobre o que quiser e compartilhe seu conhecimento</p>
       <form onSubmit={handleSubmit}>
         <label>
           <span>Título:</span>
