@@ -3,8 +3,11 @@ import styles from './About.module.scss';
 import { Link } from 'react-router-dom';
 
 import { useAuthValue } from '../../context/AuthContext';
+import { useTitle } from '../../hooks';
 
 export const About = () => {
+  useTitle('Tech Blog | Sobre');
+
   const { user } = useAuthValue();
 
   return (

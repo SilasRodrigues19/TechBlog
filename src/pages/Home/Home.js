@@ -2,11 +2,13 @@ import styles from './Home.module.scss';
 
 import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
-import { useFetchDocuments } from '../../hooks/useFetchDocuments';
+import { useFetchDocuments, useTitle } from '../../hooks';
 import { Icon } from '@iconify/react';
 import { PostDetail } from '../../components/PostDetail/PostDetail';
 
 export const Home = () => {
+  useTitle('Tech Blog');
+
   const [query, setQuery] = useState('');
   const { documents: posts, loading } = useFetchDocuments('posts');
 
@@ -30,7 +32,6 @@ export const Home = () => {
         <button className="btn btn-dark">Pesquisar</button>
       </form>
       <div className={styles.postsWrapper}>
-        {loading && <p>Carregando...</p>}
         {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
         {posts && posts.length === 0 && (
           <div className={styles.hasNoPosts}>

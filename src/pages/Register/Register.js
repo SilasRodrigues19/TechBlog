@@ -1,11 +1,13 @@
 import styles from './Register.module.scss';
 
 import { useState, useEffect } from 'react';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth, useTitle } from '../../hooks';
 
 import { Icon } from '@iconify/react';
 
 export const Register = () => {
+  useTitle('Tech Blog | Faça seu cadastro');
+
   const [displayName, setDisplayName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

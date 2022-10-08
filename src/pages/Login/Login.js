@@ -1,11 +1,13 @@
 import styles from './Login.module.scss';
 
 import { useState, useEffect } from 'react';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth, useTitle } from '../../hooks';
 
 import { Icon } from '@iconify/react';
 
 export const Login = () => {
+  useTitle('Tech Blog | Faça login');
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 

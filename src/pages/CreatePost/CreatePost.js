@@ -3,11 +3,13 @@ import styles from './CreatePost.module.scss';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthValue } from '../../context/AuthContext';
-import { useInsertDocument } from '../../hooks/useInsertDocument';
+import { useInsertDocument, useTitle } from '../../hooks';
 
 import { Icon } from '@iconify/react';
 
 export const CreatePost = () => {
+  useTitle('Tech Blog | Criar postagem');
+
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
   const [body, setBody] = useState('');
