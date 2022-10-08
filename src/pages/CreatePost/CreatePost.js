@@ -2,7 +2,7 @@ import styles from './CreatePost.module.scss';
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuthValue } from '../../context/AuthContext';
+import { useAuthValue } from '../../contexts/AuthContext';
 import { useInsertDocument, useTitle } from '../../hooks';
 
 import { Icon } from '@iconify/react';

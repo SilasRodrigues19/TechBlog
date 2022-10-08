@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import { onAuthStateChanged } from 'firebase/auth';
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider } from './contexts/AuthContext';
 
 import { useState, useEffect } from 'react';
 import { useAuth } from './hooks/useAuth';
