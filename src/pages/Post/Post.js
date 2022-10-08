@@ -1,34 +1,24 @@
 import styles from './Post.module.scss';
 
-import { Icon } from '@iconify/react';
+import { Link, useParams } from 'react-router-dom';
 
-import { useParams } from 'react-router-dom';
+import { useFetchDocument, useTitle } from '../../hooks';
 
-import { useFetchDocument } from '../../hooks/useFetchDocument';
+import { Loader } from '../../components';
 
 export const Post = () => {
   const { id } = useParams();
   const { document: post, loading } = useFetchDocument('posts', id);
 
+  useTitle('Tech Blog | Ver post');
+
   return (
     <div className={styles.postContainer}>
-      {loading && (
-        <p
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1rem',
-            fontSize: '1.5rem',
-          }}
-        >
-          Carregando post
-          <Icon icon="eos-icons:bubble-loading" color="#272343" />
-        </p>
-      )}
+      {loading && <Loader />}
       {post && (
         <>
           <h1>{post.title}</h1>
-          <img src={post.image} alt={post.title} />
+          <img src={post.image} alt={post.title} loading="lazy" />
           <p>{post.body}</p>
           <h3>Categorias associadas a este post:</h3>
           <div className={styles.tags}>
@@ -39,6 +29,9 @@ export const Post = () => {
               </p>
             ))}
           </div>
+          <Link to="/" className="btn btn-dark">
+            Voltar
+          </Link>
         </>
       )}
     </div>
