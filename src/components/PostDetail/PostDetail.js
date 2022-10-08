@@ -6,7 +6,7 @@ export const PostDetail = ({ post }) => {
   return (
     <div className={styles.postDetail}>
       <div className={styles.imgBox}>
-        <img src={post.image} alt={post.title} />
+        <img src={post.image} alt={post.title} loading="lazy" />
       </div>
       <h2>{post.title}</h2>
       <p>{post.createdBy}</p>
