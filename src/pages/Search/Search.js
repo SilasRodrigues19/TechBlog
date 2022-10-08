@@ -1,5 +1,4 @@
-import { useFetchDocuments } from '../../hooks/useFetchDocuments';
-import { useQuery } from '../../hooks/useQuery';
+import { useFetchDocuments, useQuery, useTitle } from '../../hooks';
 
 import { PostDetail } from '../../components/PostDetail/PostDetail';
 
@@ -10,6 +9,8 @@ import styles from './Search.module.scss';
 export const Search = () => {
   const query = useQuery();
   const search = query.get('q').toLowerCase();
+
+  useTitle(`Tech Blog | Resultados para ${search}`);
 
   const { documents: posts } = useFetchDocuments('posts', search);
 
@@ -26,10 +27,15 @@ export const Search = () => {
           </Link>
         </>
       ) : (
-        <h2>
-          Resultados encontrados para{' '}
-          <span className={styles.term}>{search}</span>
-        </h2>
+        <div className={styles.results}>
+          <h2>
+            Resultados encontrados para{' '}
+            <span className={styles.term}>{search}</span>
+          </h2>
+          <Link to="/" className="btn btn-dark">
+            Voltar
+          </Link>
+        </div>
       )}
       <div>
         {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
