@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 import { useAuth } from '../../hooks';
 
-import { useAuthValue } from '../../context/AuthContext';
+import { useAuthValue } from '../../contexts/AuthContext';
 
 import styles from './Navbar.module.scss';
 

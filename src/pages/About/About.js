@@ -2,7 +2,7 @@ import styles from './About.module.scss';
 
 import { Link } from 'react-router-dom';
 
-import { useAuthValue } from '../../context/AuthContext';
+import { useAuthValue } from '../../contexts/AuthContext';
 import { useTitle } from '../../hooks';
 
 export const About = () => {

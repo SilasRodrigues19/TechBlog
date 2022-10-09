@@ -5,6 +5,18 @@
   box-sizing: border-box;
 }
 
+.w-25 {
+  width: 25%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
 img {
   -webkit-user-drag: none;
   -khtml-user-drag: none;
@@ -16,6 +28,23 @@ body {
   font-family: $mainFont;
   margin: 0;
   padding: 0;
+}
+
+.divider {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 0.1rem solid #ccc;
+  height: 1px;
+  overflow: visible;
+  color: #ccc;
+  &:after {
+    content: 'ou';
+    position: relative;
+    top: -1rem;
+    font-size: 1.4rem;
+    padding: 0 1rem;
+    background: white;
+  }
 }
 
 .container {
@@ -113,8 +142,11 @@ form {
     }
   }
   &:hover {
-    background: rgba(39, 35, 67, 0.9);
+    background: #272343e6;
     color: #f1fbfb;
+  }
+  &.btn-full {
+    width: 100%;
   }
 }
 
