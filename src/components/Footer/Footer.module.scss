@@ -4,5 +4,6 @@
 .footer {
   @include flexCenterCol;
   height: pxToRem(250);
-  background: #edf3f6;
+  background: #272343;
+  color: #cacaca;
 }
