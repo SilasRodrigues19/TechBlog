@@ -52,7 +52,7 @@ export const Register = () => {
             <span>Nome:</span>
             <input
               type="text"
-              name="dislayName"
+              name="displayName"
               placeholder="Nome do usuário"
               autoComplete="off"
               required
