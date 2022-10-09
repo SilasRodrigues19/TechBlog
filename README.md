@@ -144,13 +144,13 @@ Project Link: [https://github.com/SilasRodrigues19/TechBlog](https://github.com/
 [issues-url]: https://github.com/SilasRodrigues19/TechBlog/issues
 [license-shield]: https://img.shields.io/github/license/SilasRodrigues19/TechBlog.svg?style=for-the-badge
 [license-url]: https://github.com/SilasRodrigues19/TechBlog/blob/master/LICENSE
-[product-screenshot]: ./public/preview.png
-[product-screenshot2]: ./public/preview2.png
-[product-screenshot3]: ./public/preview3.png
-[product-screenshot4]: ./public/preview4.png
-[product-screenshot5]: ./public/preview5.png
-[product-screenshot6]: ./public/preview6.png
-[product-screenshot7]: ./public/preview7.png
+[product-screenshot]: ./public/screenshots/preview.png
+[product-screenshot2]: ./public/screenshots/preview2.png
+[product-screenshot3]: ./public/screenshots/preview3.png
+[product-screenshot4]: ./public/screenshots/preview4.png
+[product-screenshot5]: ./public/screenshots/preview5.png
+[product-screenshot6]: ./public/screenshots/preview6.png
+[product-screenshot7]: ./public/screenshots/preview7.png
 [license-url]: https://github.com/SilasRodrigues19/TechBlog/blob/master/LICENSE
 
 <br><hr>
