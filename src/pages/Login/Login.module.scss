@@ -7,4 +7,14 @@
   p {
     color: #aaa;
   }
+  .socialButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 0;
+    button {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
 }

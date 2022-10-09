@@ -38,7 +38,7 @@ export const Login = () => {
     <>
       <div className={styles.login}>
         <h1>Entrar</h1>
-        <p>Informe seus dados para acessar o sistema.</p>
+        <p>Faça login com seu e-mail e senha.</p>
         <form onSubmit={handleSubmit}>
           <label>
             <span>Email:</span>
@@ -66,8 +66,25 @@ export const Login = () => {
               Aguarde...
             </button>
           ) : (
-            <button className="btn">Entrar</button>
+            <button className="btn btn-full">Entrar</button>
           )}
+
+          <hr className="divider" />
+
+          <div className={styles.socialButtons}>
+            <button className="btn">
+              <Icon icon="akar-icons:google-fill" />
+            </button>
+            <button className="btn">
+              <Icon icon="akar-icons:facebook-fill" />
+            </button>
+            <button className="btn">
+              <Icon icon="akar-icons:twitter-fill" />
+            </button>
+            <button className="btn">
+              <Icon icon="akar-icons:github-fill" />
+            </button>
+          </div>
 
           {error && (
             <div className="error">
