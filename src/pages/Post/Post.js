@@ -19,7 +19,7 @@ export const Post = () => {
         <>
           <h1>{post.title}</h1>
           <img src={post.image} alt={post.title} loading="lazy" />
-          <p>{post.body}</p>
+          <p className={post.body.length > 150 ? styles.content : ''}>{post.body}</p>
           <h3>Categorias associadas a este post:</h3>
           <div className={styles.tags}>
             {post.tagsArray.map((tag) => (
