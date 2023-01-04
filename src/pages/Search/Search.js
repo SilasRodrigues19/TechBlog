@@ -18,9 +18,8 @@ export const Search = () => {
     <div className={styles.searchContainer}>
       {posts && posts.length === 0 ? (
         <>
-          <p>
-            Não foram encontrados posts com o termo{' '}
-            <span className={styles.term}>{search}</span>
+          <p>Não foram encontrados posts com o termo
+            <p className={styles.term}>{search}</p>
           </p>
           <Link to="/" className="btn btn-dark">
             Voltar
