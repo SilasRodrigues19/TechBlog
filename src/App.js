@@ -6,7 +6,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import { useState, useEffect } from 'react';
 import { useAuth } from './hooks/useAuth';
 
-import { Home, About, Login, Register, Dashboard, CreatePost } from './pages';
+import { Home, About, Login, Register, Dashboard, CreatePost, EditPost } from './pages';
 import { Navbar, Footer, Loader } from './components';
 import { Search } from './pages/Search/Search';
 import { Post } from './pages/Post/Post';
@@ -26,33 +26,37 @@ export const App = () => {
   if (loadingUser) return <Loader />;
 
   return (
-    <div className="App">
+    <div className='App'>
       <AuthProvider value={{ user }}>
         <BrowserRouter>
           <Navbar />
-          <div className="container">
+          <div className='container'>
             <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/search" element={<Search />} />
-              <Route path="/posts/:id" element={<Post />} />
+              <Route exact path='/' element={<Home />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/search' element={<Search />} />
+              <Route path='/post/:id' element={<Post />} />
               <Route
-                path="/login"
-                element={!user ? <Login /> : <Navigate to="/" />}
+                path='/login'
+                element={!user ? <Login /> : <Navigate to='/' />}
               />
               <Route
-                path="/register"
-                element={!user ? <Register /> : <Navigate to="/" />}
+                path='/register'
+                element={!user ? <Register /> : <Navigate to='/' />}
               />
               <Route
-                path="/dashboard"
-                element={user ? <Dashboard /> : <Navigate to="/" />}
+                path='/dashboard'
+                element={user ? <Dashboard /> : <Navigate to='/' />}
               />
               <Route
-                path="/post/create"
-                element={user ? <CreatePost /> : <Navigate to="/" />}
+                path='/post/edit/:id'
+                element={user ? <EditPost /> : <Navigate to='/' />}
               />
-              <Route path="*" element={<h1>404 (Ainda não implementada)</h1>} />
+              <Route
+                path='/post/create'
+                element={user ? <CreatePost /> : <Navigate to='/' />}
+              />
+              {/* <Route path='*' element={<h1>404 (Ainda não implementada)</h1>} /> */}
             </Routes>
           </div>
           <Footer />
