@@ -1,6 +1,6 @@
 import styles from './Dashboard.module.scss';
 
-import { useTitle } from '../../hooks';
+import { useTitle, useDeleteDocument } from '../../hooks';
 
 import { Link } from 'react-router-dom';
 
@@ -14,7 +14,8 @@ export const Dashboard = () => {
   const uid = user.uid;
 
   const { documents: posts, loading } = useFetchDocuments('posts', null, uid);
-  const deleteDocument = (id) => { }
+
+  const { deleteDocument } = useDeleteDocument('posts');
   
   if (loading) return <p>Carregando...</p>
 
@@ -25,7 +26,7 @@ export const Dashboard = () => {
       {posts && posts.length === 0 ? (
         <div className={styles.hasNoPosts}>
           <p>Não foram encontrados posts</p>
-          <Link to="/posts/create" className='btn'>Criar primeiro post</Link>
+          <Link to="/post/create" className='btn'>Criar primeiro post</Link>
         </div>
       ) : (
           <>
@@ -41,8 +42,8 @@ export const Dashboard = () => {
         <div key={id} className={styles.postRow}>
           <p>{title}</p>
           <div className={styles.dashboardBtns}>
-            <Link to={`/posts/${id}`} className='btn btn-outline'>Ver</Link>
-            <Link to={`/posts/edit/${id}`} className='btn btn-outline'>Editar</Link>
+            <Link to={`/post/${id}`} className='btn btn-outline'>Ver</Link>
+            <Link to={`/post/edit/${id}`} className='btn btn-outline'>Editar</Link>
             <button onClick={() => deleteDocument(id)} className='btn btn-outline btn-danger'>
               Excluir
             </button>
