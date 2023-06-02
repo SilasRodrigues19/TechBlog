@@ -3,6 +3,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: $mainFont;
 }
 
 .w-25 {
@@ -25,7 +26,6 @@ img {
 }
 
 body {
-  font-family: $mainFont;
   margin: 0;
   padding: 0;
 }
