@@ -3,7 +3,7 @@ import styles from '../CreatePost/CreatePost.module.scss';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuthValue } from '../../contexts/AuthContext';
-import { useFetchDocument, useInsertDocument, useTitle } from '../../hooks';
+import { useFetchDocument, useUpdateDocument, useTitle } from '../../hooks';
 
 import { Icon } from '@iconify/react';
 
@@ -33,7 +33,7 @@ export const EditPost = () => {
   }, [post])
 
 
-  const { insertDocument, response } = useInsertDocument('posts');
+  const { updateDocument, response } = useUpdateDocument('posts');
 
   const { user } = useAuthValue();
 
@@ -57,16 +57,18 @@ export const EditPost = () => {
 
     if (formError) return;
 
-    insertDocument({
+    const data = {
       title,
       image,
       body,
       tagsArray,
       uid: user.uid,
       createdBy: user.displayName,
-    });
+    }
 
-    navigate('/');
+    updateDocument(id, data);
+
+    navigate('/dashboard');
   };
 
   return (
@@ -130,7 +132,7 @@ export const EditPost = () => {
                 Aguarde...
               </button>
             ) : (
-              <button className='btn'>Cadastrar</button>
+              <button className='btn'>Salvar</button>
             )}
 
             {response.error && (
