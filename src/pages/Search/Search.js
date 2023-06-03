@@ -4,8 +4,6 @@ import { PostDetail } from '../../components/PostDetail/PostDetail';
 
 import { Link } from 'react-router-dom';
 
-import styles from './Search.module.scss';
-
 export const Search = () => {
   const query = useQuery();
   const search = query.get('q').toLowerCase();
@@ -15,21 +13,21 @@ export const Search = () => {
   const { documents: posts } = useFetchDocuments('posts', search);
 
   return (
-    <div className={styles.searchContainer}>
+    <div>
       {posts && posts.length === 0 ? (
         <>
           <p>Não foram encontrados posts com o termo
-            <p className={styles.term}>{search}</p>
+            <p>{search}</p>
           </p>
           <Link to="/" className="btn btn-dark">
             Voltar
           </Link>
         </>
       ) : (
-        <div className={styles.results}>
+        <div>
           <h2>
             Resultados encontrados para{' '}
-            <span className={styles.term}>{search}</span>
+            <span>{search}</span>
           </h2>
           <Link to="/" className="btn btn-dark">
             Voltar
