@@ -11,6 +11,8 @@ import { Navbar, Footer, Loader } from './components';
 import { Search } from './pages/Search/Search';
 import { Post } from './pages/Post/Post';
 
+import '../src/index.scss'
+
 export const App = () => {
   const [user, setUser] = useState(undefined);
   const { auth } = useAuth();
