@@ -1,5 +1,3 @@
-import styles from '../CreatePost/CreatePost.module.scss';
-
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuthValue } from '../../contexts/AuthContext';
@@ -72,11 +70,15 @@ export const EditPost = () => {
   };
 
   return (
-    <div className={styles.createPost}>
+    <div>
       {post && (
         <>
-          <h2>Editando post: {post.title}</h2>
-          <p>Altere os dados do post como desejar</p>
+          <h2 className='text-3xl font-bold mb-4 text-center'>
+            Editando post: <span className='font-normal'>{post.title}</span>
+          </h2>
+          <p className='text-gray-500 mb-6 text-center'>
+            Altere os dados do post como desejar
+          </p>
           <form onSubmit={handleSubmit}>
             <label>
               <span>Título:</span>
@@ -102,8 +104,16 @@ export const EditPost = () => {
               />
             </label>
 
-            <p className={styles.titlePreview}>Preview da imagem atual:</p>
-            <img src={post.image} alt={post.title} className={styles.imagePreview} />
+            <div>
+              <p className='text-gray-800 font-bold my-2 text-center'>
+                Preview da imagem atual:
+              </p>
+              <img
+                src={post.image}
+                alt={post.title}
+                className='max-w-full mb-4 rounded-lg shadow-sm'
+              />
+            </div>
 
             <label>
               <span>Conteúdo:</span>
@@ -128,27 +138,43 @@ export const EditPost = () => {
               />
             </label>
             {response.isLoading ? (
-              <button className='btn' disabled>
-                Aguarde...
+              <button
+                className='w-full bg-gray-700 hover:bg-gray-600 text-white px-8 py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50'
+                disabled
+              >
+                <Icon
+                  icon='eos-icons:bubble-loading'
+                  className='m-auto h-6'
+                  width='24'
+                  height='24'
+                />
               </button>
             ) : (
-              <button className='btn'>Salvar</button>
+              <button className='w-full bg-gray-700 hover:bg-gray-600 text-white px-8 py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50'>
+                Salvar
+              </button>
             )}
 
             {response.error && (
-              <div className='error'>
-                <p>
-                  <Icon className='dangerIcon' icon='jam:triangle-danger-f' />
-                  {response.error}
-                </p>
+              <div className='fixed bottom-0 right-0 mb-4 mr-4 border-2 bg-red-500 ring-2 ring-red-300 text-white px-4 py-2 rounded'>
+                <div className='flex items-center'>
+                  <Icon
+                    className='dangerIcon text-xl mr-2'
+                    icon='jam:triangle-danger-f'
+                  />
+                  <p>{response.error}</p>
+                </div>
               </div>
             )}
             {formError && (
-              <div className='error'>
-                <p>
-                  <Icon className='dangerIcon' icon='jam:triangle-danger-f' />
-                  {formError}
-                </p>
+              <div className='fixed bottom-0 right-0 mb-4 mr-4 border-2 bg-red-500 ring-2 ring-red-300 text-white px-4 py-2 rounded'>
+                <div className='flex items-center'>
+                  <Icon
+                    className='dangerIcon text-xl mr-2'
+                    icon='jam:triangle-danger-f'
+                  />
+                  <p>{formError}</p>
+                </div>
               </div>
             )}
           </form>
