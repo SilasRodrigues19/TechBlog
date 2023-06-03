@@ -1,5 +1,3 @@
-import styles from './Home.module.scss';
-
 import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useFetchDocuments, useTitle } from '../../hooks';
@@ -10,7 +8,7 @@ export const Home = () => {
   useTitle('Tech Blog');
 
   const [query, setQuery] = useState('');
-  const { documents: posts, loading } = useFetchDocuments('posts');
+  const { documents: posts } = useFetchDocuments('posts');
 
   const navigate = useNavigate();
 
@@ -21,32 +19,52 @@ export const Home = () => {
   };
 
   return (
-    <div className={styles.home}>
-      <h1>Veja os nossos posts mais recentes</h1>
-      <form onSubmit={handleSubmit} className={styles.searchForm}>
-        <input
-          type="text"
-          placeholder="Busque por algum termo..."
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <button className="btn btn-dark">Pesquisar</button>
-      </form>
-      <div className={styles.postsWrapper}>
-        {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
-        {posts && posts.length === 0 && (
-          <div className={styles.hasNoPosts}>
-            <div className="error">
-              <p>
-                <Icon className="dangerIcon" icon="jam:triangle-danger-f" />
-                Não existe nada publicado.
-              </p>
-            </div>
-            <Link to="/post/create" className="btn">
-              Criar novo post
-            </Link>
+    <div>
+      <h1 className='text-3xl text-gray-700 font-bold text-center mb-8'>
+        Veja os nossos posts mais recentes
+      </h1>
+
+      <div className='flex justify-center'>
+        <form onSubmit={handleSubmit} className='w-full max-w-screen-lg'>
+          <div className='flex items-center justify-center'>
+            <input
+              type='text'
+              placeholder='Palavra-chave...'
+              onChange={(e) => setQuery(e.target.value)}
+              className='w-full px-12 py-4 mr-2 text-gray-400 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-gray-500'
+            />
+
+            <button className='bg-gray-700 hover:bg-gray-600 text-white px-8 py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50'>
+              Pesquisar
+            </button>
           </div>
-        )}
+        </form>
+      </div>
+      <div className='flex justify-center'>
+        <div className='w-full max-w-screen-lg'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
+            {posts &&
+              posts.map((post) => <PostDetail key={post.id} post={post} />)}
+            {posts && posts.length === 0 && (
+              <div>
+                <div className='fixed bottom-0 right-0 mb-4 mr-4 border-2 bg-red-500 ring-2 ring-red-300 text-white px-4 py-2 rounded'>
+                  <div className='flex items-center'>
+                    <Icon
+                      className='dangerIcon text-xl mr-2'
+                      icon='jam:triangle-danger-f'
+                    />
+                    <p>Não existe nada publicado</p>
+                  </div>
+                </div>
+                <Link to='/post/create' className='btn'>
+                  Criar novo post
+                </Link>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
+
 };
