@@ -1,5 +1,3 @@
-import styles from './CreatePost.module.scss';
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthValue } from '../../contexts/AuthContext';
@@ -52,81 +50,105 @@ export const CreatePost = () => {
   };
 
   return (
-    <div className={styles.createPost}>
-      <h2>Criar post</h2>
-      <p>Escreva sobre o que quiser e compartilhe seu conhecimento</p>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <span>Título:</span>
+    <div>
+      <h2 className='text-3xl font-bold mb-4 text-center'>Criar post</h2>
+      <p className='text-gray-500 mb-6 text-center'>
+        Escreva sobre o que quiser e compartilhe seu conhecimento
+      </p>
+      <form onSubmit={handleSubmit} className='max-w-sm mx-auto'>
+        <label className='mb-4'>
+          <span className='text-gray-800'>Título:</span>
           <input
-            type="text"
-            name="title"
+            type='text'
+            name='title'
             required
-            placeholder="Pense em um bom título"
+            placeholder='Pense em um bom título'
             onChange={(e) => setTitle(e.target.value)}
             value={title}
+            className='input'
           />
         </label>
 
-        <label>
-          <span>URL da imagem:</span>
+        <label className='mb-4'>
+          <span className='text-gray-800'>URL da imagem:</span>
           <input
-            type="text"
-            name="image"
+            type='text'
+            name='image'
             required
-            placeholder="Insira uma imagem que representa o seu post"
+            placeholder='Insira uma imagem que representa o seu post'
             onChange={(e) => setImage(e.target.value)}
             value={image}
+            className='input'
           />
         </label>
 
-        <label>
-          <span>Conteúdo:</span>
+        <label className='mb-4'>
+          <span className='text-gray-800'>Conteúdo:</span>
           <textarea
-            name="body"
+            name='body'
             required
-            placeholder="Insira o conteúdo do post"
+            placeholder='Insira o conteúdo do post'
             onChange={(e) => setBody(e.target.value)}
             value={body}
+            className='input'
           ></textarea>
         </label>
 
-        <label>
-          <span>Tags:</span>
+        <label className='mb-4'>
+          <span className='text-gray-800'>Tags:</span>
           <input
-            type="text"
-            name="tags"
+            type='text'
+            name='tags'
             required
-            placeholder="Insira as tags separadas por vírgula"
+            placeholder='Insira as tags separadas por vírgula'
             onChange={(e) => setTags(e.target.value)}
             value={tags}
+            className='input'
           />
         </label>
+
         {response.isLoading ? (
-          <button className="btn" disabled>
-            Aguarde...
+          <button
+            className='w-full bg-gray-700 hover:bg-gray-600 text-white px-8 py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50'
+            disabled
+          >
+            <Icon
+              icon='eos-icons:bubble-loading'
+              className='m-auto h-6'
+              width='24'
+              height='24'
+            />
           </button>
         ) : (
-          <button className="btn">Cadastrar</button>
+          <button className='w-full bg-gray-700 hover:bg-gray-600 text-white px-8 py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50'>
+            Cadastrar
+          </button>
         )}
 
         {response.error && (
-          <div className="error">
-            <p>
-              <Icon className="dangerIcon" icon="jam:triangle-danger-f" />
-              {response.error}
-            </p>
+          <div className='fixed bottom-0 right-0 mb-4 mr-4 border-2 bg-red-500 ring-2 ring-red-300 text-white px-4 py-2 rounded'>
+            <div className='flex items-center'>
+              <Icon
+                className='dangerIcon text-xl mr-2'
+                icon='jam:triangle-danger-f'
+              />
+              <p>{response.error}</p>
+            </div>
           </div>
         )}
         {formError && (
-          <div className="error">
-            <p>
-              <Icon className="dangerIcon" icon="jam:triangle-danger-f" />
-              {formError}
-            </p>
+          <div className='fixed bottom-0 right-0 mb-4 mr-4 border-2 bg-red-500 ring-2 ring-red-300 text-white px-4 py-2 rounded'>
+            <div className='flex items-center'>
+              <Icon
+                className='dangerIcon text-xl mr-2'
+                icon='jam:triangle-danger-f'
+              />
+              <p>{formError}</p>
+            </div>
           </div>
         )}
       </form>
     </div>
   );
+
 };
