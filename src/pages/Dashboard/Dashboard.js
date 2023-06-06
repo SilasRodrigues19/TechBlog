@@ -6,6 +6,8 @@ import { useAuthValue } from '../../contexts/AuthContext'
 import { useFetchDocuments } from '../../hooks';
 import { Icon } from '@iconify/react';
 
+
+
 export const Dashboard = () => {
   useTitle('Tech Blog | Painel');
 
@@ -14,7 +16,11 @@ export const Dashboard = () => {
 
   const { documents: posts, loading } = useFetchDocuments('posts', null, uid);
 
-  const { deleteDocument } = useDeleteDocument('posts');
+  const { confirmDelete } = useDeleteDocument('posts');
+
+  const handleDelete = (documentId) => {
+    confirmDelete(documentId);
+  };
   
   if (loading) return <p>Carregando...</p>
 
@@ -32,7 +38,10 @@ export const Dashboard = () => {
           </p>
           <div className='border border-gray-200 bg-white bg-opacity-50 rounded p-4 mb-6'>
             <p className='text-gray-500 mb-2'>Não foram encontrados posts</p>
-            <Link to='/post/create' className='btn btn-primary text-sm px-4 py-2'>
+            <Link
+              to='/post/create'
+              className='btn btn-primary text-sm px-4 py-2'
+            >
               Criar primeiro post
             </Link>
           </div>
@@ -67,7 +76,7 @@ export const Dashboard = () => {
                       />
                     </Link>
                     <button
-                      onClick={() => deleteDocument(id)}
+                      onClick={() => handleDelete(id)}
                       className='inline-block text-sm px-4 py-2 text-gray-400 hover:text-gray-500'
                     >
                       <Icon icon='ic:baseline-delete' className='h-6 w-6' />
